@@ -1,0 +1,23 @@
+const Login=require('../../model/LoginModel')
+const SignupController=async(req,res)=>{
+    try{
+        // console.log(req.body)
+   const obj=new Login(req.body);
+    await obj.save();
+    res.status(201).json({message:"signup successful"})
+    }
+    catch(error){
+        // console.log(error);
+        if (error.code === 11000) {
+            if (error.keyPattern.email === 1) {
+                res.status(500).json({ message: "email already exist" });
+            }
+            if (error.keyPattern.username === 1) {
+                res.status(500).json({ message: "username already exist" });
+            }
+          } else {  
+            res.status(500).json({ message: "Server Error" });
+          }
+    }
+}
+module.exports=SignupController;
