@@ -19,7 +19,6 @@ app.use('/api/course',CourseRouter);
 app.use('/api/survey',SurveyRouter);
 app.use('/api/article',ArticleRouter);
 app.use('/api/purchase',PurchasedCourseRouter);
-
 app.listen(5000,()=>{
     `listening to port ${port}`;
 })

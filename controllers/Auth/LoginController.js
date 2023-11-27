@@ -4,10 +4,10 @@ const Login=require('../../model/LoginModel')
 const LoginController=async(req,res)=>{
     try{
        
-     const {email,username,password}=req.body;
+     const {username,password}=req.body;
      const res1=await Login.findOne({
         $or:[
-            {email:email},
+            {email:username},
             {username:username}
         ]
      });
