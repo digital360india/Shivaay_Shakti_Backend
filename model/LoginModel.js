@@ -35,6 +35,8 @@ const LoginSchema=new mongoose.Schema({
         type:String,
         trim:true,
         lowercase:true,
+        required:true,
+        default:""
     },
     height:{ type:Number, required:true},
     weight:{ type:Number, required:true},
@@ -67,7 +69,9 @@ const LoginSchema=new mongoose.Schema({
         default:false
     },
     profile_img:{
-   type:String
+   type:String,
+   required:true,
+   default:""
     }
 })
 
