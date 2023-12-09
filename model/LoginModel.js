@@ -2,16 +2,50 @@
  const validator=require('validator')
  const bcrypt=require('bcrypt')
 const LoginSchema=new mongoose.Schema({
-    username:{
+       name:{
         type:String,
-        unique:true,
-        require:true,
+        required:true,
         trim:true,
         lowercase:true,
     },
+       country:{
+        type:String,
+        required:true,
+        trim:true,
+        lowercase:true,
+    },
+       city:{
+        type:String,
+        required:true,
+        trim:true,
+        lowercase:true,
+    },
+       gender:{
+        type:String,
+        required:true,
+        trim:true,
+        lowercase:true,
+    },
+       specify:{
+        type:String,
+        trim:true,
+        lowercase:true,
+    },
+       medical_condition:{
+        type:String,
+        trim:true,
+        lowercase:true,
+    },
+    height:{ type:Number, required:true},
+    weight:{ type:Number, required:true},
+
+    born:{
+        type:String,
+        required:true,
+    },
     email:{
         type:String,    
-        require:true,
+        required:true,
         trim:true,
         unique:true,
         lowercase:true,
@@ -29,8 +63,11 @@ const LoginSchema=new mongoose.Schema({
     },
     isAdmin:{
         type:Boolean,
-        require:true,
+        required:true,
         default:false
+    },
+    profile_img:{
+   type:String
     }
 })
 

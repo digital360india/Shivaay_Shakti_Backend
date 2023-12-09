@@ -1,8 +1,9 @@
 const Login=require('../../model/LoginModel')
 const SignupController=async(req,res)=>{
     try{
-        // console.log(req.body)
+        console.log(req.body)
    const obj=new Login(req.body);
+   console.log(obj);
     await obj.save();
     res.status(201).json({message:"signup successful"})
     }
