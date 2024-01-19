@@ -11,7 +11,7 @@ const PurchasedCourseSchema=new mongoose.Schema({
     expiration_date:{type:String,required:true},
     price:{type:Number,required:true},
     date:{type:Date,default:Date.now()},
-    days:[{ type: String }],
+    days: { type: [{ type: String }], default: undefined },
     transaction_id:{type:String,required:true,unique:true},
     transaction_status:{type:String,required:true},
 })
