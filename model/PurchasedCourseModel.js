@@ -12,7 +12,7 @@ const PurchasedCourseSchema=new mongoose.Schema({
     price:{type:Number,required:true},
     date:{type:Date,default:Date.now()},
     days:[{ type: String }],
-    transaction_id:{type:String,required:true},
+    transaction_id:{type:String,required:true,unique:true},
     transaction_status:{type:String,required:true},
 })
 module.exports=mongoose.model("Purchase_Course",PurchasedCourseSchema)
