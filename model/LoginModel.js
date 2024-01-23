@@ -35,8 +35,8 @@ const LoginSchema=new mongoose.Schema({
         type:String,
         trim:true,
         lowercase:true,
-        required:true,
-        default:""
+        default:"",
+        required:false
     },
     height:{ type:Number, required:true},
     weight:{ type:Number, required:true},
@@ -68,11 +68,6 @@ const LoginSchema=new mongoose.Schema({
         required:true,
         default:false
     },
-    profile_img:{
-   type:String,
-   required:true,
-   default:""
-    }
 })
 
 LoginSchema.pre("save",async function(next){
