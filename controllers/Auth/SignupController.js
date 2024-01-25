@@ -10,14 +10,8 @@ const SignupController=async(req,res)=>{
     res.status(201).json({message:"signup successful"})
     }
     catch(error){
-        console.log(error);
-        if (error.code === 11000) {
-            if (error.keyPattern.email === 1) {
-                res.status(500).json({ message: "email already exist" });
-            }
-          } else {  
+        console.log(error);  
             res.status(500).json({ message:error.message });
-          }
     }
 }
 module.exports=SignupController;

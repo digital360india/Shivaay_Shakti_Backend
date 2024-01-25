@@ -3,9 +3,9 @@ const jwt=require('jsonwebtoken')
 const Login=require('../../model/LoginModel')
 const LoginController=async(req,res)=>{
     try{
-       
-     const {username,password}=req.body;
-     const res1=await Login.findOne({email:username});
+    //    console.log(req.body)
+     const {email,password}=req.body;
+     const res1=await Login.findOne({email:email});
     if(res1)
     {
         bcrypt.compare(password,res1.password,async function(err,result){
