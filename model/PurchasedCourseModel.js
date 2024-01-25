@@ -1,5 +1,6 @@
 const mongoose=require('mongoose')
 const PurchasedCourseSchema=new mongoose.Schema({
+    name:{type:String,required:true},
     user_id:{type:String,required:true},
     course_id:{type:String,required:true},
     course_name:{type:String,required:true},

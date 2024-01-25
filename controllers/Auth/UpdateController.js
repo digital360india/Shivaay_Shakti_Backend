@@ -1,6 +1,7 @@
 const Login=require('../../model/LoginModel')
 const UpdateController=async(req,res)=>{
     console.log(req.params)
+    console.log(req.body);
     const {_id}=req.params;
     try{
         const response=await Login.findByIdAndUpdate(_id,req.body,{new:true});

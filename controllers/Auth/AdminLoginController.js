@@ -11,6 +11,7 @@ const AdminLoginController=async(req,res)=>{
             {email:email,isAdmin:"admin"},
         
      );
+     console.log(res1)
     if(res1)
     {
         bcrypt.compare(password,res1.password,async function(err,result){
@@ -21,6 +22,7 @@ const AdminLoginController=async(req,res)=>{
              res1.password="";
             return res.status(200).json({ message: "Login successful", user: res1,token:token });
             }
+         
         })
     }
     else{
@@ -29,7 +31,7 @@ const AdminLoginController=async(req,res)=>{
     }
     }
     catch(e){
-        // console.log(e);
+        console.log(e);
         res.status(500).json({ message: "Internal Server Error" });
     }
 }
