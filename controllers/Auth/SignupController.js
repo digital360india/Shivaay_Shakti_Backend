@@ -15,9 +15,6 @@ const SignupController=async(req,res)=>{
             if (error.keyPattern.email === 1) {
                 res.status(500).json({ message: "email already exist" });
             }
-            if (error.keyPattern.username === 1) {
-                res.status(500).json({ message: "username already exist" });
-            }
           } else {  
             res.status(500).json({ message:error.message });
           }
