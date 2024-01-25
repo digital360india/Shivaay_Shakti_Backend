@@ -1,17 +1,20 @@
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken')
 const Login=require('../../model/LoginModel')
-const LoginController=async(req,res)=>{
+const TrainerLoginController=async(req,res)=>{
     try{
        
-     const {username,password}=req.body;
-     const res1=await Login.findOne({email:username});
+     const {email,username,password}=req.body;
+     const res1=await Login.findOne(
+            {email:email,isAdmin:"trainer"}, 
+     );
     if(res1)
     {
         bcrypt.compare(password,res1.password,async function(err,result){
             if(result)
             {
             const token=jwt.sign({_id:res1._id},process.env.Secret_key)
+            // console.log(token);
              res1.password="";
             return res.status(200).json({ message: "Login successful", user: res1,token:token });
             }
@@ -27,4 +30,4 @@ const LoginController=async(req,res)=>{
         res.status(500).json({ message: "Internal Server Error" });
     }
 }
-module.exports=LoginController;
+module.exports=TrainerLoginController;

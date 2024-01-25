@@ -1,7 +1,7 @@
 // console.log("hi")
 const Login=require('../../model/LoginModel')
 const SignupController=async(req,res)=>{
-    // console.log("hjkl")
+    console.log("hjkl")
     try{
         console.log(req.body)
    const obj=new Login(req.body);

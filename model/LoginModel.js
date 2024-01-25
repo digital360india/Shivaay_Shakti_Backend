@@ -49,7 +49,7 @@ const LoginSchema=new mongoose.Schema({
         type:String,    
         required:true,
         trim:true,
-        unique:true,
+        // unique:true,
         lowercase:true,
         validate(value){    
             if(!validator.isEmail(value))
@@ -64,9 +64,9 @@ const LoginSchema=new mongoose.Schema({
         trim:true,
     },
     isAdmin:{
-        type:Boolean,
+        type:String,
         required:true,
-        default:false
+        default:"user"
     },
 })
 
