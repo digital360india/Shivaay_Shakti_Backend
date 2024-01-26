@@ -11,7 +11,7 @@ const AdminLoginController=async(req,res)=>{
             {email:email,isAdmin:"admin"},
         
      );
-     console.log(res1)
+    //  console.log(res1)
     if(res1)
     {
         bcrypt.compare(password,res1.password,async function(err,result){
@@ -26,7 +26,7 @@ const AdminLoginController=async(req,res)=>{
         })
     }
     else{
-        console.log(res1);
+        // console.log(res1);
         return res.status(401).json({ message: "Invalid Credentials" });
     }
     }

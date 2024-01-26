@@ -1,11 +1,11 @@
-const Login=require('../../model/LoginModel')
+const Purchased=require('../../model/PurchasedCourseModel')
 const UpdateController=async(req,res)=>{
-    // console.log(req.params)
-    // console.log(req.body);
+    console.log(req.params)
+    console.log(req.body);
     const {_id}=req.params;
     try{
-        const response=await Login.findByIdAndUpdate(_id,req.body,{new:true});
-        // console.log(response);
+        const response=await Purchased.findByIdAndUpdate(_id,req.body,{new:true});
+        console.log(response);
     if(response)
     {res.status(200).json({message:"updated successful",dta:response})
     }

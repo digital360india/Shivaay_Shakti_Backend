@@ -1,11 +1,11 @@
 // console.log("hi")
 const Login=require('../../model/LoginModel')
 const SignupController=async(req,res)=>{
-    console.log("hjkl")
+    // console.log("hjkl")
     try{
-        console.log(req.body)
-   const obj=new Login(req.body);
-   console.log(obj);
+        // console.log(req.body)
+//    const obj=new Login(req.body);
+//    console.log(obj);
     await obj.save();
     res.status(201).json({message:"signup successful"})
     }

@@ -1,6 +1,6 @@
 const Purchased=require('../../model/PurchasedCourseModel')
 const AddPurchasedCourseController=async(req,res)=>{
-    console.log("hello")
+    // console.log("hello")
     try{
    const obj=new Purchased(req.body);
    await obj.save();
