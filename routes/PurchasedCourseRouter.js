@@ -6,10 +6,12 @@ const PurchasedByIdController = require('../controllers/PurchasedCourse/Purchase
 const AllPendingTransactionController=require('../controllers/PurchasedCourse/AllPendingTransactionController')
 const AllCompletedTransactionController=require('../controllers/PurchasedCourse/AllCompletedTransactionController')
 const UpdatePurchaseById=require('../controllers/PurchasedCourse/UpdatePurchaseById')
-const isAdmin=require('../middleware/isAdmin')
+const isAdmin=require('../middleware/isAdmin');
+const UpdateGroupLinkController = require('../controllers/PurchasedCourse/UpdateGroupLinkController');
 router.post('/',auth,AddPurchasedCourseController)
 router.get('/:id/:transaction_status',auth,PurchasedByIdController)
 router.get('/pending',isAdmin,AllPendingTransactionController)
 router.get('/completed',isAdmin,AllCompletedTransactionController)
 router.put('/pending/:_id',isAdmin,UpdatePurchaseById)
+router.put('/grouplink',isAdmin,UpdateGroupLinkController)
 module.exports=router;
