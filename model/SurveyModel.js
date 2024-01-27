@@ -16,6 +16,8 @@ const SurveySchema=new mongoose.Schema({
     date:{
         type:Date,
         default:Date.now()
-    }
+    },
+    email:{ type:String, required:true},
+    contact:{ type:Number, required:true}
 })
 module.exports=mongoose.model('Survey',SurveySchema);
