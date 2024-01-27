@@ -16,7 +16,7 @@ const PurchasedCourseSchema=new mongoose.Schema({
     transaction_id:{type:String,required:true,unique:true},
     transaction_status:{type:String,required:true},
     link:{type:String},
-    remarks: { type: [{ type: String }], default: undefined },
+    remarks: { type: String, default: "" },
     points: {
         type: [{
             date: { type: String, required: true },
