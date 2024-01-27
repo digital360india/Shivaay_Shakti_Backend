@@ -15,7 +15,7 @@ router.get('/pending',isAdmin,AllPendingTransactionController)
 router.get('/completed',isAdmin,AllCompletedTransactionController)
 router.get('/personal',isAdmin,AllPersonalCompletedTranscationController)
 router.put('/pending/:_id',isAdmin,UpdatePurchaseById)
-router.put('/personallink',isAdmin,UpdatePurchaseById)
+router.put('/personallink/:_id',isAdmin,UpdatePurchaseById)
 router.put('/status/:_id',UpdatePurchaseById)
 router.put('/grouplink',isAdmin,UpdateGroupLinkController)
 module.exports=router;

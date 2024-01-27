@@ -13,6 +13,7 @@ const UpdateController=async(req,res)=>{
         res.status(400).json({message:" Id not found"})  
     }}
     catch(error){
+        console.log(error);
             res.status(500).json({ message: "Server Error" });
         
     }
