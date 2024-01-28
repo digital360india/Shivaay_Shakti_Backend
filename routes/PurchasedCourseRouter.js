@@ -9,11 +9,13 @@ const UpdatePurchaseById=require('../controllers/PurchasedCourse/UpdatePurchaseB
 const isAdmin=require('../middleware/isAdmin');
 const UpdateGroupLinkController = require('../controllers/PurchasedCourse/UpdateGroupLinkController');
 const AllPersonalCompletedTranscationController = require('../controllers/PurchasedCourse/AllPersonalCompletedTranscationController');
+const isTrainer = require('../middleware/isTrainer');
 router.post('/',auth,AddPurchasedCourseController)
 router.get('/:id/:transaction_status',auth,PurchasedByIdController)
 router.get('/pending',isAdmin,AllPendingTransactionController)
 router.get('/completed',isAdmin,AllCompletedTransactionController)
 router.get('/personal',isAdmin,AllPersonalCompletedTranscationController)
+router.get('/trainer',AllPersonalCompletedTranscationController)
 router.put('/pending/:_id',isAdmin,UpdatePurchaseById)
 router.put('/personallink/:_id',isAdmin,UpdatePurchaseById)
 router.put('/status/:_id',UpdatePurchaseById)
