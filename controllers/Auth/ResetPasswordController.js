@@ -12,13 +12,13 @@ const ResetPasswordController=async(req,res)=>{
             {
                 res1.password=password;
              await res1.save();
-             return res.json({ Status: "Success" });
+             return res.status(200).json({ message: "Success" });
             }
-            return res.status(404).json({ Status: "User not found" });
+            return res.status(404).json({ message: "User not found" });
 
         }
         else{
-            return res.status(401).json({ Status: "Unauthorized" });
+            return res.status(401).json({ message: "Unauthorized" });
         }
     }
     catch(e){
