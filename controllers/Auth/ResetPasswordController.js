@@ -22,7 +22,7 @@ const ResetPasswordController=async(req,res)=>{
         }
     }
     catch(e){
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ message: "Internal Server Error",msg:e.message });
     }
 }
 module.exports=ResetPasswordController;
