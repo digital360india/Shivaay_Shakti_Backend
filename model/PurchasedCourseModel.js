@@ -19,16 +19,10 @@ const PurchasedCourseSchema=new mongoose.Schema({
     remarks: { type: String },
     points: {
         type: [{
-            date: { type: String, required: true },
-            points: { type: String, required: true },
+            date1: { type: String, required: true,unique:true },
+            point: { type: String, required: true },
         }],
-        validate: {
-            validator: function (value) {
-                return value.length === 2;
-            },
-            message: 'The points array must have exactly two elements.',
-        },
-        default: undefined,
+        default: [],
     },
 })
 module.exports=mongoose.model("Purchase_Course",PurchasedCourseSchema)
