@@ -7,18 +7,17 @@ const UpdatePointsByPurchaseById = async (req, res) => {
   const { _id } = req.params;
 
   try {
-    const response = await Purchased.updateOne(
-      { _id:  mongoose.Types.ObjectId(_id)}, 
-      { $push: { points: { date1: date1, point: point } } },
-      { new: true, runValidators: true }
-    );
-
-    console.log(response)
-    if (response.nModified > 0) {
+    const response = await Purchased.findById(
+      _id  );
+    
+    if (response) {
+      if (!response.points) {
+        response.points = [];
+      }
+      response.points.push(req.body);
+      await response.save();
       res.status(200).json({ message: "Updated successfully", data: response });
-    } else {
-      res.status(404).json({ message: "ID not found" });
-    }
+    } 
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
