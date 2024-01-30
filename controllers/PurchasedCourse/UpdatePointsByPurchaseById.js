@@ -1,24 +1,24 @@
 const Purchased = require('../../model/PurchasedCourseModel');
 
 const UpdatePointsByPurchaseById = async (req, res) => {
-  console.log(req.params);
-  console.log(req.body);
-  const { date1, point } = req.body;
+  // console.log(req.params);
+  // console.log(req.body);
   const { _id } = req.params;
-
   try {
-    const response = await Purchased.findById(
-      _id  );
-    
-    if (response) {
-      if (!response.points) {
-        response.points = [];
-      }
-      response.points.push(req.body);
-      await response.save();
+    const response = await Purchased.findByIdAndUpdate(
+      _id,
+      {
+        $push: {
+          points: req.body
+        },
+      },
+      { new: true } 
+    );
+    console.log(response);
+    if(response)
       res.status(200).json({ message: "Updated successfully", data: response });
     } 
-  } catch (error) {
+   catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
   }

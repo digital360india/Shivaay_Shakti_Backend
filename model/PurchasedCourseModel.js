@@ -22,7 +22,7 @@ const PurchasedCourseSchema=new mongoose.Schema({
             date1: { type: String, required: true,unique:true },
             point: { type: Number, required: true },
         }],
-        required:false
+        default:undefined
     },
 })
 module.exports=mongoose.model("Purchase_Course",PurchasedCourseSchema)
