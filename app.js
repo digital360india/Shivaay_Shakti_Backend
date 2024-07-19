@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
     res.send("welcome");
 })
 app.use('/api/auth',LoginRouter);
-app.use('/api/course',CourseRouter);
+app.use('/course',CourseRouter);
 app.use('/api/survey',SurveyRouter);
 app.use('/api/article',ArticleRouter);
 app.use('/api/purchase',PurchasedCourseRouter);

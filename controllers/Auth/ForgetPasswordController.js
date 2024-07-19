@@ -21,8 +21,8 @@ const ForgetPasswordController=async(req,res)=>{
                 from: 'nakult824@gmail.com',
                 to: email,
                 subject: 'Reset Password Link',
-                text: `https://shivaay-shakti-yog.vercel.app/reset_password/${res1._id}/${token}`
-                // text: `http://localhost:5173/reset_password/${res1._id}/${token}`
+                // text: `https://shivaay-shakti-yog.vercel.app/reset_password/${res1._id}/${token}`
+                text: `http://localhost:5173/reset_password/${res1._id}/${token}`
               };
               
               transporter.sendMail(mailOptions, function(error, info){
