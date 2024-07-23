@@ -8,8 +8,7 @@ const UpdateCourseController=require('../controllers/Courses/UpdateCourseControl
 const isAdmin=require('../middleware/isAdmin')
 router.get('/',AllCoursesController);
 router.get('/:id',CourseByIdController);
-// router.post('/',isAdmin,AddCourseController);
-router.post('/',AddCourseController);
+router.post('/',isAdmin,AddCourseController);
 router.put('/:id',isAdmin,UpdateCourseController);
 router.delete('/:id',isAdmin,DeleteCourseController);
 module.exports=router;  
