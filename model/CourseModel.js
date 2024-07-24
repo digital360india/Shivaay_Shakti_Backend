@@ -10,7 +10,7 @@ const CourseSchema = new mongoose.Schema({
   live_sessions1: { type: Number, required: true },
   recorded_sessions1: { type: Number, required: true },
   course_duration_days1: { type: Number, required: true },
-  Personal_description1: { type: String, required: true },
+  Personal_description1: { type: String },
   beginner_friendly1: { type: Boolean, required: true },
   female_oriented1: { type: Boolean, required: true },
   age_range1: { type: String, required: true },
@@ -22,7 +22,7 @@ const CourseSchema = new mongoose.Schema({
   },
   live_sessions2: { type: Number, required: true },
   recorded_sessions2: { type: Number, required: true },
-  Group_description2: { type: String, required: true },
+  Group_description2: { type: String,  },
   course_duration_days2: { type: Number, required: true },
   beginner_friendly2: { type: Boolean, required: true },
   female_oriented2: { type: Boolean, required: true },
@@ -53,8 +53,8 @@ const CourseSchema = new mongoose.Schema({
   group_duration: {
     type: [
       {
-        timing1: { type: String, required: true },
-        price3: { type: Number, required: true },
+        timing: { type: String, required: true },
+        price: { type: Number, required: true },
       },
     ],
     required: true,
