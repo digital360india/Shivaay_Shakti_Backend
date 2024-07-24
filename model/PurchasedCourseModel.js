@@ -14,7 +14,7 @@ const PurchasedCourseSchema=new mongoose.Schema({
     course_name:{type:String,required:true},
     expiration_date:{type:String,required:true},
     course_type:{type:String,required:true},
-    date:{type:Date,default:Date.now()},
+    // date:{type:Date,default:Date.now()},
     days: { type: [{ type: String }], default: undefined },
     remarks: { type: String },
     points: {
