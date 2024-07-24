@@ -8,7 +8,7 @@ const AddPurchasedCourseController=async(req,res)=>{
     }
     catch(e)
     {
-        res.status(500).json({success:true,message:"Server Error"});
+        res.status(500).json({success:true,message:"Server Error" , e});
     }
 }
 module.exports=AddPurchasedCourseController;
