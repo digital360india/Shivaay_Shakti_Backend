@@ -19,7 +19,7 @@ const PurchasedCourseSchema=new mongoose.Schema({
     remarks: { type: String },
     points: {
         type: [{
-            date1: { type: String,unique:true },
+            date1: { type: String },
             point: { type: Number },
         }],
       default:undefined
