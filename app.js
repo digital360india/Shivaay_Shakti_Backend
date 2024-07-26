@@ -22,4 +22,4 @@ app.use('/api/purchase',PurchasedCourseRouter);
 app.listen(port, () => {
     console.log(`Listening to port ${port}`);
   });
-   
+    
