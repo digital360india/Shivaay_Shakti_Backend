@@ -27,4 +27,4 @@ const PurchasedCourseSchema = new mongoose.Schema({
     default: undefined,
   },
 });
-module.exports = mongoose.model("Purchase_Course", PurchasedCourseSchema);
+module.exports = mongoose.model("Purchase_Course", PurchasedCourseSchema); 
