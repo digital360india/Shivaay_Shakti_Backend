@@ -25,7 +25,7 @@ app.use("/api/purchase", PurchasedCourseRouter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/send-email", (req, res) => {
-  const { name, email, number, gender, age } = req.body;
+  const { name, email, number, gender, age, type, slots } = req.body;
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
@@ -37,7 +37,7 @@ app.post("/send-email", (req, res) => {
     from: email,
     to: "shivaayshaktiyog@gmail.com",
     subject: "New Enquiry from Shivaay Shakti Yog Portal",
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${number}\nAge: ${age}\nGender: ${gender}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${number}\nAge: ${age}\nGender: ${gender}\nType: ${type}\nTime Slots: ${slots}`,
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
