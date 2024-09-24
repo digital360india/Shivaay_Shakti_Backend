@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use(cors({
-  origin: ["https://www.shivaayshaktiyog.com/"], 
+  origin: ["https://www.shivaayshaktiyog.com"], 
 }));
 
 app.get("/", (req, res) => {
