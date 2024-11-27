@@ -17,14 +17,12 @@ const PurchasedCourseSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now() },
   days: { type: [{ type: String }], default: undefined },
   remarks: { type: String },
-  // points: {
-  //   type: [
-  //     {
-  //       date1: { type: String, required: true, unique: true },
-  //       point: { type: Number, required: true },
-  //     },
-  //   ],
-  //   default: undefined,
-  // },
+  points: {
+    
+        date1: { type: String },
+        point: { type: Number },
+      
+    default: undefined,
+  },
 });
 module.exports = mongoose.model("Purchase_Course", PurchasedCourseSchema); 
