@@ -21,8 +21,7 @@ const PurchasedCourseSchema = new mongoose.Schema({
     
         date1: { type: String },
         point: { type: Number },
-      
-    default: undefined,
-  },
+  }
+  
 });
 module.exports = mongoose.model("Purchase_Course", PurchasedCourseSchema); 
