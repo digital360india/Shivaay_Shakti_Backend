@@ -3,13 +3,11 @@ const Login = require("../../model/LoginModel");
 const ResetPasswordController = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(req.headers.authorization);
     const { password } = req.body;
     const authHeader = req.headers.authorization;
 
     if (authHeader && authHeader.startsWith("Bearer ")) {
       const token = authHeader.split(" ")[1];
-      console.log(token);
       const match = jwt.verify(token, process.env.Secret_key);
       if (match.userid === id) {
         const res1 = await Login.findOne({ _id: id });
