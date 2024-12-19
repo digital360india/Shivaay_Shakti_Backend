@@ -15,13 +15,13 @@ const ForgetPasswordController = async (req, res) => {
       var transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "infogoedu360@gmail.com",
-          pass: "rxjp tesb xoac dein",
+          user: "shivaayshaktiyog@gmail.com",
+          pass: "caer lkmo mxuv kmiw",
         },
       });
 
       var mailOptions = {
-        from: "infogoedu360@gmail.com",
+        from: "shivaayshaktiyog@gmail.com",
         to: email,
         subject: "Reset Password Request",
         text: `Click the link to reset your password: https://www.shivaayshaktiyog.com/reset-password/${user._id}`,
